@@ -1,0 +1,144 @@
+:root {
+  --max-width: 1280px;
+  --min-width: 320px;
+  --accent-color: #00c2ff;
+  --clr-white: #eee;
+  --clr-black: #111;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100%;
+  background-color: var(--clr-black);
+  color: var(--clr-white);
+  font-family: sans-serif;
+}
+a {
+  text-decoration: none;
+  color: var(--clr-white);
+}
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-width: var(--min-width);
+  background-image: url(../assets/img/bg1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: 0.4s ease-in-out;
+}
+
+.header,
+.content,
+.footer {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Header */
+.header {
+  max-width: var(--max-width);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  display: flex;
+  align-items: center;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+.header__img {
+  margin-right: 0.5rem;
+  width: 5.625rem;
+}
+.menu__ul {
+  list-style: none;
+}
+.menu__li {
+  display: inline-block;
+  margin-left: 1rem;
+  font-size: 20px;
+}
+.menu__a--btn,
+.content__a {
+  background-color: var(--accent-color);
+  padding: 1rem 2rem;
+  font-size: 24px;
+}
+
+/* Content */
+.content {
+  max-width: var(--max-width);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+.content__btn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.prev-slide {
+  left: -3rem;
+}
+.next-slide {
+  right: -3rem;
+}
+.content__arrow {
+  width: 2rem;
+}
+.content__h1 {
+  font-size: 60px;
+  color: var(--accent-color);
+  margin: 0;
+}
+.content__h2 {
+  font-size: 30px;
+  margin: 1rem 0;
+}
+
+/* Footer */
+.footer-wrapper {
+  background-color: var(--clr-black);
+}
+.footer {
+  max-width: var(--max-width);
+  display: flex;
+  justify-content: space-between;
+}
+.footer__section {
+  font-size: 24px;
+}
+.footer__h3 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+.footer__p {
+  margin: 0;
+}
+
+/* Responsive */
+@media screen and (max-width: 1280px) {
+  .header,
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  .content {
+    align-items: center;
+  }
+  .footer__section {
+    margin-bottom: 1rem;
+    font-size: 1em;
+  }
+}
